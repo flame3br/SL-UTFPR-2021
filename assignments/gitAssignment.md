@@ -25,13 +25,15 @@ representam o conteúdo que você precisa preencher e postar em seu repositório
     -  `git log --decorate`
 
 ```
-
+git branch -> exibe as branches existentes
+git checkout -> troca branch atual
+git log -> exibe commits na branch
 
 ```
 
 2. Tente usar `git log --graph --all`. O que acontece?
 ```
-
+Desenha representação gráfica do histórico de commits da branch
 
 ```
 
@@ -39,15 +41,14 @@ representam o conteúdo que você precisa preencher e postar em seu repositório
    Sumarize as diferenças do master e do outro ramo.
 
 ```
-
+As classes privadas nos dois são diferentes, um contém a classe A e outro a classe B
 
 ```
 
 4. Escreva uma sequencia de comandos para mesclar o ramo não-master no `master`
 
 ```
-
-
+git merge feature-foo
 ```
 
 
@@ -55,7 +56,9 @@ representam o conteúdo que você precisa preencher e postar em seu repositório
 e (ii) mudar para este ramo
 
 ```
-
+git checkout master
+git branch math
+git checkout math
 
 ```
    
@@ -67,8 +70,8 @@ System.out.println(2+2)
 
 7. Escreva o comando (ou sequencia) para realizar o commit de suas mudanças
 ```
-
-
+git add B.java
+git commit -m "update B"
 ```
 
 8. Volte para o branch `master` e mude B.java adicionando o seguinte código-fonte (confirme sua mudança para` master`):
@@ -78,24 +81,28 @@ System.out.println("Hello World")
 
 9. Escreva uma sequência de comando para mesclar o branch `math` em` master` e descreva o que aconteceu
 ```
-
+git merge math
+As mudanças não commitadas foram detectadas e o merge automático foi cancelado
 
 ```
    
 10. Escreva um conjunto de comandos para abortar a mesclagem
 ```
-
+git merge --abort
 
 ```
    
 11. Agora repita o item 9, mas prossiga com a mesclagem manual (Editando B.java). Todas as funções implementadas são necessárias. Explique o seu procedimento
 ```
-
+Ambas as alterações foram mantidas, de ambos os commits
 
 ```
 
 12. Escreva um comando (ou conjunto de comandos) para prosseguir com a mesclagem e atualizar o branch `master`
 ```
+git add B.java
+git commit -m "update B both messages"
+git merge math
 
 
 ```
